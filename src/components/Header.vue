@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col items-center mt-20 mb-12 md:flex-row md:items-center">
+  <div class="flex flex-col items-center mt-14 mb-12 md:flex-row md:items-center">
     <div class="mb-4 md:mr-5 md:mb-0">
       <div v-if="!athlete.profile_image" class="w-24 h-24 rounded-full flex items-center justify-center" :style="getInitialsBgStyle(athlete.name)">
         <span class="text-white text-3xl font-bold">{{ getInitials(athlete.name) }}</span>
