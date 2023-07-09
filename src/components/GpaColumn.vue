@@ -12,25 +12,28 @@ export default {
   },
   methods: {
     getGpaColorClass(column) {
-        // not sure yet
-    },
-   getClosestGpaColumn() {
-      const tolerance = 0.10;
-      let closestColumn = null;
-      let closestDifference = Infinity;
-
-      for (const column in this.gpa) {
+      if (column === '50%') {
         const columnGpa = this.gpa[column];
-        const difference = Math.abs(columnGpa - this.playerGpa);
+        const difference = columnGpa - this.playerGpa;
 
-        if (difference <= tolerance && difference < closestDifference) {
-          closestDifference = difference;
-          closestColumn = column;
+        switch (true) {
+          case difference > 0.10:
+            return 'bg-red-500';
+          case difference > 0 && difference <= 0.10:
+            return 'bg-purple-500';
+          case difference === 0:
+            return 'bg-indigo-500';
+          case difference < 0 && difference >= -0.10:
+            return 'bg-blue-500';
+          case difference < -0.10:
+            return 'bg-blue-300';
+          default:
+            return '';
         }
       }
 
-      return closestColumn;
-    },
+      return '';
+    }
   },
 };
 </script>
