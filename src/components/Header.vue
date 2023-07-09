@@ -4,11 +4,11 @@
       <div v-if="!athlete.profile_image" class="w-24 h-24 rounded-full flex items-center justify-center" :style="getInitialsBgStyle(athlete.name)">
         <span class="text-white text-3xl font-bold">{{ getInitials(athlete.name) }}</span>
       </div>
-      <img v-else class="w-24 h-24 rounded-full mt-1"  :src="athlete.profile_image" alt="Avatar" />
+      <img v-else class="w-24 h-24 rounded-full mt-1" :src="athlete.profile_image" alt="Avatar" />
     </div>
     <div class="flex flex-col">
       <div class="flex items-center">
-       <h2 v-if="!editingName" class="mb-1 mt-1 text-xl font-bold text-blue-500">{{ athlete.name }}</h2>
+        <h2 v-if="!editingName" class="mb-1 mt-1 text-xl font-bold text-blue-500">{{ athlete.name }}</h2>
         <input v-else class="mb-1 mt-1 text-xl font-bold text-blue-500" type="text" v-model="editedName" />
         <button class="ml-4 bg-blue-500 text-white px-2 py-1 rounded-md text-sm" @click="toggleNameEditing">
           {{ editingName ? 'Save' : 'Edit' }}
@@ -45,13 +45,14 @@
         </ul>
       </div>
     </div>
-     <div class="flex items-center ml-auto">
+    <div class="flex items-center ml-auto">
       <img class="w-10 h-10" src="logo-placeholder.png" alt="Logo" />
     </div>
   </div>
 </template>
 
 <script>
+import { useAthleteStore } from '@/stores/athleteStore';
 
 export default {
   name: "Header",
@@ -79,12 +80,14 @@ export default {
       return `background-color: ${randomColor}`;
     },
     toggleNameEditing() {
+      const athleteStore = useAthleteStore();
+      const athlete = athleteStore.athlete;
       if (this.editingName) {
         athleteStore.updateName(this.editedName);
         this.editingName = false;
       } else {
         this.editingName = true;
-        this.editedName = athleteStore.name;
+        this.editedName = athlete.name;
       }
     },
   },
