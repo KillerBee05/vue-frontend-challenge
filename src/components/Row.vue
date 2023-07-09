@@ -21,14 +21,14 @@ export default {
   },
   methods: {
     getSatRange(sat) {
-      if (sat.min && sat.max) {
+      if (sat.min !== "N/A" && sat.max !== "N/A") {
         return `${sat.min}-${sat.max}`;
       } else {
         return "Not Reported";
       }
     },
     getActRange(act) {
-      if (act.min && act.max) {
+      if (act.min !== "N/A" && act.max !== "N/A") {
         return `${act.min}-${act.max}`;
       } else {
         return "Not Reported";
