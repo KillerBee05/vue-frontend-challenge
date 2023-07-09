@@ -18,15 +18,15 @@ export default {
 
         switch (true) {
           case difference > 0.10:
-            return 'bg-red-500';
+            return 'background-color: #d7737d';
           case difference > 0 && difference <= 0.10:
-            return 'bg-purple-500';
+            return 'background-color: #c194b5';
           case difference === 0:
-            return 'bg-indigo-500';
+            return 'background-color: #b4a7d6';
           case difference < 0 && difference >= -0.10:
-            return 'bg-blue-500';
+            return 'background-color: #a6a8da';
           case difference < -0.10:
-            return 'bg-blue-300';
+            return 'background-color: #75ace5';
           default:
             return '';
         }
@@ -42,7 +42,8 @@ export default {
   <td
     v-for="(value, column) in gpa"
     :key="column"
-    :class="['text-center', 'text-xs', getGpaColorClass(column)]"
+    :style="getGpaColorClass(column)"
+    :class="['text-center', 'text-xs']"
   >
     {{ value.toFixed(2) }}
   </td>
