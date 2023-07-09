@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: "GpaColumn",
   props: {
     gpa: {
       type: Object,

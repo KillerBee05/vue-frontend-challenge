@@ -2,6 +2,7 @@
 import GpaColumn from './GpaColumn.vue';
 
 export default {
+  name: "Row",
   props: {
     item: {
       type: Object,

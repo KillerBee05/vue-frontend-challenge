@@ -2,6 +2,7 @@
 import Row from './Row.vue';
 
 export default {
+  name: "Table",
   props: {
     report: {
       type: Array,
