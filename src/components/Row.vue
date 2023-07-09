@@ -41,7 +41,7 @@ export default {
 
 <template>
   <tr>
-    <td class="whitespace-nowrap text-xs py-2">{{ item.school }}</td>
+    <td class="whitespace-nowrap text-xs py-2 sticky left-0" :class="[index % 2 === 1 ? 'bg-blue-100' : 'bg-white']">{{ item.school }}</td>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ item.division }}</td>
     <td class="whitespace-nowrap text-xs py-2">{{ item.conference }}</td>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ item.ranking }}</td>
@@ -50,6 +50,5 @@ export default {
     <td class="whitespace-nowrap text-center text-xs py-2">{{ getSatRange(item.sat.math) }}</td>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ getActRange(item.act) }}</td>
   </tr>
-
 </template>
 
