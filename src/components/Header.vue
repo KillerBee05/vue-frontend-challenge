@@ -20,11 +20,14 @@ export default {
       const initials = name.match(/\b(\w)/g);
       return initials ? initials.join("") : "";
     },
-    getInitialsBgStyle() {
-      const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
-      const randomIndex = Math.floor(Math.random() * colors.length);
-      const randomColor = colors[randomIndex];
-      return `background-color: ${randomColor}`;
+    getInitialsBgStyle(name) {
+        const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
+        if (name.charAt(name.lastIndexOf(" ") + 1).toUpperCase().startsWith("C")) {
+            const colorIndex = Math.floor(Math.random() * colors.length);
+            return `background-color: ${colors[colorIndex]}`;
+        } else {
+            return "background-color: red";
+        }
     },
     toggleNameEditing() {
       const athleteStore = useAthleteStore();
