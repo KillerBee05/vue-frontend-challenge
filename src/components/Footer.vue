@@ -1,3 +1,9 @@
+<script>
+export default {
+  name: "Footer",
+};
+</script>
+
 <template>
   <footer class="py-4 mt-16">
     <p class="text-sm text-left">
@@ -8,9 +14,5 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: "Footer",
-};
-</script>
+
 

@@ -1,13 +1,3 @@
-<template>
-  <td
-    v-for="(value, column) in gpa"
-    :key="column"
-    :class="['text-center', 'text-xs', getGpaColorClass(column)]"
-  >
-    {{ value.toFixed(2) }}
-  </td>
-</template>
-
 <script>
 export default {
   props: {
@@ -44,4 +34,14 @@ export default {
   },
 };
 </script>
+
+<template>
+  <td
+    v-for="(value, column) in gpa"
+    :key="column"
+    :class="['text-center', 'text-xs', getGpaColorClass(column)]"
+  >
+    {{ value.toFixed(2) }}
+  </td>
+</template>
 

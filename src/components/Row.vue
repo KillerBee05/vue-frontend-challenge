@@ -1,16 +1,3 @@
-<template>
-  <tr>
-    <td class="whitespace-nowrap text-xs">{{ item.school }}</td>
-    <td class="whitespace-nowrap text-center text-xs">{{ item.division }}</td>
-    <td class="whitespace-nowrap text-xs">{{ item.conference }}</td>
-    <td class="whitespace-nowrap text-center text-xs">{{ item.ranking }}</td>
-    <GpaColumn :gpa="item.gpa" :playerGpa="playerGpa" />
-    <td class="whitespace-nowrap text-center text-xs">{{ getSatRange(item.sat.reading) }}</td>
-    <td class="whitespace-nowrap text-center text-xs">{{ getSatRange(item.sat.math) }}</td>
-    <td class="whitespace-nowrap text-center text-xs">{{ getActRange(item.act) }}</td>
-  </tr>
-</template>
-
 <script>
 import GpaColumn from './GpaColumn.vue';
 
@@ -50,3 +37,19 @@ export default {
   },
 };
 </script>
+
+
+<template>
+  <tr>
+    <td class="whitespace-nowrap text-xs py-2">{{ item.school }}</td>
+    <td class="whitespace-nowrap text-center text-xs py-2">{{ item.division }}</td>
+    <td class="whitespace-nowrap text-xs py-2">{{ item.conference }}</td>
+    <td class="whitespace-nowrap text-center text-xs py-2">{{ item.ranking }}</td>
+    <GpaColumn :gpa="item.gpa" :playerGpa="playerGpa" />
+    <td class="whitespace-nowrap text-center text-xs py-2">{{ getSatRange(item.sat.reading) }}</td>
+    <td class="whitespace-nowrap text-center text-xs py-2">{{ getSatRange(item.sat.math) }}</td>
+    <td class="whitespace-nowrap text-center text-xs py-2">{{ getActRange(item.act) }}</td>
+  </tr>
+
+</template>
+

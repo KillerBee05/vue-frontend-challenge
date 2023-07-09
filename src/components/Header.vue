@@ -1,3 +1,47 @@
+<script>
+import { useAthleteStore } from '@/stores/athleteStore';
+
+export default {
+  name: "Header",
+  props: {
+    athlete: {
+      type: Object,
+      required: false,
+    },
+  },
+  data() {
+    return {
+      editingName: false,
+      editedName: '',
+    };
+  },
+  methods: {
+    getInitials(name) {
+      const initials = name.match(/\b(\w)/g);
+      return initials ? initials.join("") : "";
+    },
+    getInitialsBgStyle() {
+      const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      const randomColor = colors[randomIndex];
+      return `background-color: ${randomColor}`;
+    },
+    toggleNameEditing() {
+      const athleteStore = useAthleteStore();
+      const athlete = athleteStore.athlete;
+      if (this.editingName) {
+        athleteStore.updateName(this.editedName);
+        this.editingName = false;
+      } else {
+        this.editingName = true;
+        this.editedName = athlete.name;
+      }
+    },
+  },
+};
+</script>
+
+
 <template>
   <div class="flex items-center mt-20 mb-12">
     <div class="mr-4">
@@ -50,46 +94,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { useAthleteStore } from '@/stores/athleteStore';
-
-export default {
-  name: "Header",
-  props: {
-    athlete: {
-      type: Object,
-      required: false,
-    },
-  },
-  data() {
-    return {
-      editingName: false,
-      editedName: '',
-    };
-  },
-  methods: {
-    getInitials(name) {
-      const initials = name.match(/\b(\w)/g);
-      return initials ? initials.join("") : "";
-    },
-    getInitialsBgStyle() {
-      const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
-      const randomIndex = Math.floor(Math.random() * colors.length);
-      const randomColor = colors[randomIndex];
-      return `background-color: ${randomColor}`;
-    },
-    toggleNameEditing() {
-      const athleteStore = useAthleteStore();
-      const athlete = athleteStore.athlete;
-      if (this.editingName) {
-        athleteStore.updateName(this.editedName);
-        this.editingName = false;
-      } else {
-        this.editingName = true;
-        this.editedName = athlete.name;
-      }
-    },
-  },
-};
-</script>

@@ -1,3 +1,33 @@
+<script>
+import Row from './Row.vue';
+
+export default {
+  props: {
+    report: {
+      type: Array,
+      required: true,
+    },
+    playerGpa: {
+      type: Number,
+      required: true,
+    },
+  },
+  components: {
+    Row,
+  },
+};
+</script>
+
+<style scoped>
+table {
+  @apply w-full;
+}
+
+th {
+  @apply bg-black text-white;
+}
+</style>
+
 <template>
   <table class="w-full">
     <thead>
@@ -44,33 +74,3 @@
     </tbody>
   </table>
 </template>
-
-<script>
-import Row from './Row.vue';
-
-export default {
-  props: {
-    report: {
-      type: Array,
-      required: true,
-    },
-    playerGpa: {
-      type: Number,
-      required: true,
-    },
-  },
-  components: {
-    Row,
-  },
-};
-</script>
-
-<style scoped>
-table {
-  @apply w-full;
-}
-
-th {
-  @apply bg-black text-white;
-}
-</style>
