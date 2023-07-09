@@ -1,21 +1,32 @@
 <template>
   <div>
-    <AcademicFitReport :athlete="athlete_info"/>
+    <AcademicFitReport :athlete="athlete_info" />
   </div>
 </template>
 
 <script>
-import AcademicFitReport from "@/components/AcademicFitReport.vue";
-import AthleteData from "@/assets/data.json";
+import { useAthleteStore } from '@/stores/athleteStore';
+import AcademicFitReport from '@/components/AcademicFitReport.vue';
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     AcademicFitReport
   },
-  data: function() {
+  setup() {
+    const athleteStore = useAthleteStore();
+    const athlete_info = athleteStore.athlete;
+
+    // Example: Log the athlete's name
+    console.log(athlete_info.report);
+
+    // Example: Update the athlete's name
+    setTimeout(() => {
+      athleteStore.updateAthleteName("John Doe");
+    }, 2000);
+
     return {
-      athlete_info: AthleteData.data[0]
+      athlete_info
     };
   }
 };

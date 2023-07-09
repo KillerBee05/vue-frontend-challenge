@@ -16,13 +16,16 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 
 export default {
-  name: "AcademicFitReport",
+  name: 'AcademicFitReport',
   components: { Header, Table, Footer },
   props: {
     athlete: {
       type: Object,
-      required: false
-    }
+      required: true,
+    },
+  },
+  mounted() {
+    console.log('athlete_info prop:', this.athlete_info);
   }
 };
 </script>
