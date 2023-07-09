@@ -1,40 +1,23 @@
 <template>
   <div>
-    <div class="info">
-      <h2>{{athlete.name}}</h2>
-      <ul>
-        <li>
-          <label>Sport:</label>
-          {{athlete.sport}}
-        </li>
-        <li>
-          <label>Class:</label>
-          {{athlete.grad_year}}
-        </li>
-        <li>
-          <label>Club:</label>
-          {{athlete.club.name}}
-        </li>
-        <li>
-          <label>High School:</label>
-          {{athlete.high_school.name}}
-        </li>
-        <li>
-          <label>GPA:</label>
-          {{athlete.gpa}}
-        </li>
-        <li>
-          <label>Desired Major:</label>
-          {{athlete.major}}
-        </li>
-      </ul>
+    <div class="bg-blue-200 py-2 px-4 fixed top-0 left-0 right-0 z-10"></div>
+    <div class="px-4 sm:px-8 md:px-4">
+      <Header :athlete="athlete" />
+      <Table :playerGpa="athlete.gpa" :report="athlete.report" />
+      <Footer />
     </div>
+    <div class="bg-blue-200 py-2 px-4 fixed bottom-0 left-0 right-0 z-10 mt-4"></div>
   </div>
 </template>
 
 <script>
+import Table from './Table.vue';
+import Header from './Header.vue';
+import Footer from './Footer.vue';
+
 export default {
   name: "AcademicFitReport",
+  components: { Header, Table, Footer },
   props: {
     athlete: {
       type: Object,
