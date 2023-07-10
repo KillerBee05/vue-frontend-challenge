@@ -17,6 +17,16 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
     2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
+## Run project on Local
+Open terminal
+navigate to the projects root directory.
+Run npm run dev
+
+## Run Cypress Tests
+Open terminal
+navigate to the projects root directory.
+Run npx cypress open - Select component testing - Start testing in chrome - Start testing test files!
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
