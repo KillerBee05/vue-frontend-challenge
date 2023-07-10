@@ -59,7 +59,7 @@ export default {
     <div class="flex flex-col items-center md:items-start">
       <div class="flex items-start mb-4 md:mb-0">
         <h2 v-if="!editingName" class="mb-1 mt-1 text-2xl font-bold text-left" style="color: #00B4FF;">{{ athlete.name }}</h2>
-        <input v-else class="mb-1 mt-1 text-xl font-bold text-blue-500 text-left" type="text" v-model="editedName" /> 
+        <input v-else class="mb-1 mt-1 text-2xl font-bold text-left border-2 border-black rounded" style="color: #00B4FF;" type="text" v-model="editedName" /> 
         <button class="ml-4 text-white px-2 py-1 mt-1 rounded-md text-sm" style="background-color: #00B4FF;" @click="toggleNameEditing">
           {{ editingName ? 'Save' : 'Edit' }}
         </button>
