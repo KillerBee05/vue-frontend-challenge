@@ -46,7 +46,7 @@ export default {
     <td class="whitespace-nowrap text-center text-xs py-2">{{ item.division }}</td>
     <td class="whitespace-nowrap text-xs py-2">{{ item.conference }}</td>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ item.ranking }}</td>
-    <GpaColumn :gpa="item.gpa" :playerGpa="playerGpa" />
+    <GpaColumn :gpa="item.gpa" :playerGpa="playerGpa" data-testid="gpa-column"/>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ getSatRange(item.sat.reading) }}</td>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ getSatRange(item.sat.math) }}</td>
     <td class="whitespace-nowrap text-center text-xs py-2">{{ getActRange(item.act) }}</td>
