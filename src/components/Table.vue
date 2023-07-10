@@ -20,10 +20,6 @@ export default {
 </script>
 
 <style scoped>
-table {
-  @apply w-full;
-}
-
 th {
   @apply bg-black text-white;
 }

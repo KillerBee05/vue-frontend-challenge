@@ -23,6 +23,7 @@ export default {
       }
       return "";
     },
+    
     getInitialsBgStyle(name) {
       const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
       if (name && name.charAt(name.lastIndexOf(" ") + 1).toUpperCase().startsWith("C")) {
