@@ -66,7 +66,7 @@ th.sub-header {
           <div class="w-full text-xs font-normal text-white">(DI NCAA)</div>
           <div class="w-full text-xs font-normal text-white">(DII &amp; DIII Hero Sports)</div>
         </th>
-        <th colspan="5" class="text-white text-xs h-6 w-2/12">GPA</th>
+        <th colspan="5" class="text-white text-xs h-6 w-1/24">GPA</th>
         <th rowspan="2" class="text-white text-xs h-6 w-1/12">
           <div>SAT Reading***</div>
           <div>25%-75%</div>

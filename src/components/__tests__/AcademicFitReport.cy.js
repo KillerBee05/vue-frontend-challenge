@@ -62,6 +62,7 @@ describe('<AcademicFitReport />', () => {
       cy.get('tbody tr').eq(index).should('contain', item.ranking);
     });
 
+    // Footer component assertions
     cy.get('footer').should('be.visible');
     cy.get('footer p').should(
       'contain',

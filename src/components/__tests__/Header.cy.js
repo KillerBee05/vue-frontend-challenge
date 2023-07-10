@@ -3,7 +3,6 @@ import { mount } from '@cypress/vue';
 
 describe('Header', () => {
   it('renders correctly', () => {
-    // Mock athlete data
     const athlete = {
       name: 'John Doe',
       sport: 'Football',

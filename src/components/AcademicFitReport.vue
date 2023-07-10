@@ -19,7 +19,7 @@ export default {
 <template>
   <div>
     <div class="py-2 px-4 left-0 right-0 z-10" style="background-color: #00B4FF;"></div>
-    <div class="px-4 sm:px-8 md:px-4">
+    <div class="px-4 sm:px-8 md:px-6">
       <Header :athlete="athlete" />
       <Table :playerGpa="athlete.gpa" :report="athlete.report" />
       <Footer />
