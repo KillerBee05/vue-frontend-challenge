@@ -1,5 +1,5 @@
 import { mount } from '@cypress/vue';
-import AcademicFitReport from './AcademicFitReport.vue';
+import AcademicFitReport from '../AcademicFitReport.vue';
 
 describe('<AcademicFitReport />', () => {
   it('renders', () => {
@@ -38,7 +38,6 @@ describe('<AcademicFitReport />', () => {
       major: 'Computer Science',
     };
 
-    // Mount the AcademicFitReport component with the athlete prop
     mount(AcademicFitReport, {
       props: {
         athlete,
@@ -61,10 +60,8 @@ describe('<AcademicFitReport />', () => {
       cy.get('tbody tr').eq(index).should('contain', item.division);
       cy.get('tbody tr').eq(index).should('contain', item.conference);
       cy.get('tbody tr').eq(index).should('contain', item.ranking);
-      // Add more assertions for other properties as needed
     });
 
-    // Footer component assertions
     cy.get('footer').should('be.visible');
     cy.get('footer p').should(
       'contain',
