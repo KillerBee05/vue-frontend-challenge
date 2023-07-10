@@ -17,18 +17,22 @@ export default {
   },
   methods: {
     getInitials(name) {
-      const initials = name.match(/\b(\w)/g);
-      return initials ? initials.join("") : "";
+      if (name) {
+        const initials = name.match(/\b(\w)/g);
+        return initials ? initials.join("") : "";
+      }
+      return "";
     },
     getInitialsBgStyle(name) {
-        const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
-        if (name.charAt(name.lastIndexOf(" ") + 1).toUpperCase().startsWith("C")) {
-            const colorIndex = Math.floor(Math.random() * colors.length);
-            return `background-color: ${colors[colorIndex]}`;
-        } else {
-            return "background-color: red";
-        }
+      const colors = ["#f1603c", "#6082fa", "#827cb8", "#0097a4", "#ffe066", "#ffa94d"];
+      if (name && name.charAt(name.lastIndexOf(" ") + 1).toUpperCase().startsWith("C")) {
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        return `background-color: ${colors[colorIndex]}`;
+      } else {
+        return "background-color: red";
+      }
     },
+
     toggleNameEditing() {
       const athleteStore = useAthleteStore();
       const athlete = athleteStore.athlete;
@@ -62,29 +66,29 @@ export default {
       </div>
       <div class="flex flex-col md:flex-row md:items-start"> 
         <ul class="mb-4 md:mr-12 md:mb-0 ">
-          <li>
+          <li data-testid="sport">
             <label class="font-bold">Sport:</label>
             {{ athlete.sport }}
           </li>
-          <li>
+          <li data-testid="class">
             <label class="font-bold">Class:</label>
             {{ athlete.grad_year }}
           </li>
-          <li>
+          <li data-testid="club">
             <label class="font-bold">Club:</label>
             {{ athlete.club.name }}
           </li>
         </ul>
         <ul>
-          <li>
+          <li data-testid="high-school">
             <label class="font-bold">High School:</label>
             {{ athlete.high_school.name }}
           </li>
-          <li>
+          <li data-testid="gpa">
             <label class="font-bold">GPA:</label>
             {{ athlete.gpa }}
           </li>
-          <li>
+          <li data-testid="desired-major">
             <label class="font-bold">Desired Major:</label>
             {{ athlete.major }}
           </li>
@@ -94,6 +98,6 @@ export default {
     <div class="md:ml-auto">
         <img class="w-10 h-10" src="logo-placeholder.png" alt="Logo" />
     </div>
-
   </div>
 </template>
+
