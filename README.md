@@ -1,6 +1,7 @@
 # vue-frontend-challenge
+![Screenshot 2023-07-10 at 3 52 23 PM](https://github.com/KillerBee05/vue-frontend-challenge/assets/21200780/34448f92-6768-4561-8f3e-2f0a726e811f)
+![Screenshot 2023-07-10 at 3 53 00 PM](https://github.com/KillerBee05/vue-frontend-challenge/assets/21200780/5eed8f02-2595-4873-931e-e66afa9cb5b5)
 
-This template should help get you started developing with Vue 3 in Vite.
 
 ## Run project on Local
 Open terminal
