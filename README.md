@@ -2,8 +2,18 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Run project on Local
+Open terminal
+navigate to the projects root directory.
+Run npm run dev
 
+## Run Cypress Tests
+Open terminal
+navigate to the projects root directory.
+Run npx cypress open - Select component testing - Start testing in chrome - Start testing test files!
+
+
+## Recommended IDE Setup
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 ## Type Support for `.vue` Imports in TS
@@ -16,16 +26,6 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
     1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
     2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Run project on Local
-Open terminal
-navigate to the projects root directory.
-Run npm run dev
-
-## Run Cypress Tests
-Open terminal
-navigate to the projects root directory.
-Run npx cypress open - Select component testing - Start testing in chrome - Start testing test files!
 
 ## Customize configuration
 
